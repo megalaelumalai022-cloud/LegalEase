@@ -286,7 +286,7 @@ Frontend=https://legal-ease-two-red.vercel.app/
 
 | Name | Role | Email |
 | :--- | :--- | :--- |
-| **MegalaE** | 👑 Team Lead | megalaelumalai022@gmail.com |
+| **Megala E** | 👑 Team Lead | megalaelumalai022@gmail.com |
 | **Nithisha** | Team Member | nithisha200611@gmail.com |
 | **Pooja sri** | Team Member | psri45721@gmail.com |
 | **Preethi** | Team Member | Preethialex61@gmail.com |
