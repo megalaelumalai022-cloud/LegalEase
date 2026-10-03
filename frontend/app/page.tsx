@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -16,19 +17,18 @@ import {
   FileCheck,
   Lock,
   ChevronRight,
-  FileDown,
-  Layers,
-  HelpCircle,
   ScanSearch,
   BookOpen,
   Briefcase,
-  UserCheck,
-  Building2,
+  Layers,
+  FileEdit,
+  History,
+  ShieldAlert,
 } from "lucide-react";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col font-sans">
       <Navbar />
 
       <main className="flex-1">
@@ -36,47 +36,59 @@ export default function LandingPage() {
         <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28 bg-gradient-to-b from-slate-50 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 border-b border-slate-200/80 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-6 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/80 px-3 py-1 text-xs font-semibold text-blue-700 dark:border-blue-900 dark:bg-blue-950/60 dark:text-blue-300">
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>Next-Generation Legal Intelligence SaaS</span>
+              {/* Brand Logo & Pill */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="relative flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-2.5 shadow-lg shadow-blue-500/10 dark:border-slate-800 dark:bg-slate-900">
+                  <Image
+                    src="/logo.png"
+                    alt="LegalEase Brand"
+                    width={56}
+                    height={56}
+                    className="rounded-xl object-contain"
+                    priority
+                  />
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/80 px-3.5 py-1 text-xs font-semibold text-blue-700 dark:border-blue-900 dark:bg-blue-950/60 dark:text-blue-300">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  <span>AI-Powered Legal Drafting & Document Intelligence</span>
+                </div>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-                LEGAL <span className="text-blue-600">EASE</span>
+              <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+                Legal contracts drafted in minutes, <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">not hours.</span>
               </h1>
 
-              <p className="text-xl sm:text-2xl font-medium text-slate-700 dark:text-slate-300 tracking-tight">
+              <p className="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300 tracking-tight max-w-2xl mx-auto">
                 Draft Smarter. Understand Better.
               </p>
 
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                Transform complex agreements into structured, enforceable drafts in minutes.
-                Draft with specialized AI, review hidden liabilities, and export in publication-ready PDF, Word, or plain text.
+                Generate tailored, enforceable legal documents with structured AI guidance, audit existing contracts for hidden liabilities, and export in publication-ready PDF, Word, or plain text.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
                 <Link href="/register">
-                  <Button size="lg" className="w-full sm:w-auto gap-2 shadow-lg shadow-blue-500/20 text-sm font-semibold">
-                    Create Your Document
+                  <Button size="lg" className="w-full sm:w-auto gap-2 shadow-lg shadow-blue-500/20 text-sm font-semibold h-11 px-6">
+                    Start Drafting Free
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="#templates">
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto text-sm">
-                    Explore Templates (17+)
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto text-sm h-11 px-6">
+                    Browse All Templates
                   </Button>
                 </Link>
               </div>
 
               {/* Trust Badges */}
               <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500">
-                <span className="flex items-center gap-1.5"><Lock className="h-4 w-4 text-emerald-600" /> 256-Bit SSL Encryption</span>
-                <span className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-blue-600" /> Never Trains on Your Data</span>
-                <span className="flex items-center gap-1.5"><FileCheck className="h-4 w-4 text-indigo-600" /> 17+ Commercial Templates</span>
+                <span className="flex items-center gap-1.5 font-medium"><Lock className="h-4 w-4 text-emerald-600" /> 256-Bit SSL Encryption</span>
+                <span className="flex items-center gap-1.5 font-medium"><ShieldCheck className="h-4 w-4 text-blue-600" /> Zero Data Training</span>
+                <span className="flex items-center gap-1.5 font-medium"><FileCheck className="h-4 w-4 text-indigo-600" /> Standard Commercial Templates</span>
               </div>
             </div>
 
-            {/* Interactive Hero Visual Preview (Section 18) */}
+            {/* Studio Workspace Visual Preview */}
             <div className="mt-14 max-w-5xl mx-auto rounded-2xl border border-slate-200/90 bg-white p-2 sm:p-4 shadow-2xl dark:border-slate-800 dark:bg-slate-900">
               <div className="rounded-xl border border-slate-100 bg-slate-50/50 p-4 sm:p-6 dark:border-slate-800 dark:bg-slate-950">
                 <div className="flex items-center justify-between border-b border-slate-200/80 pb-3 dark:border-slate-800 text-xs">
@@ -84,25 +96,25 @@ export default function LandingPage() {
                     <span className="h-3 w-3 rounded-full bg-rose-400" />
                     <span className="h-3 w-3 rounded-full bg-amber-400" />
                     <span className="h-3 w-3 rounded-full bg-emerald-400" />
-                    <span className="ml-2 font-mono text-slate-400">LegalEase Studio — Mutual Non-Disclosure Agreement.pdf</span>
+                    <span className="ml-2 font-mono text-slate-500 font-semibold">LegalEase Studio &bull; Contract Editor</span>
                   </div>
-                  <Badge variant="generated" className="text-[10px]">AI Validated Draft</Badge>
+                  <Badge variant="generated" className="text-[10px]">AI-Assisted Draft</Badge>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-5">
                   <div className="md:col-span-8 space-y-3 font-serif bg-white p-6 rounded-lg border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800">
                     <h3 className="font-bold text-base text-center uppercase tracking-wide text-slate-900 dark:text-white">
-                      MUTUAL NON-DISCLOSURE AND CONFIDENTIALITY AGREEMENT
+                      CONFIDENTIALITY AND NON-DISCLOSURE AGREEMENT
                     </h3>
                     <p className="text-[11px] text-slate-500 font-sans text-center">
-                      Jurisdiction: Delaware, United States &bull; Effective Date: October 2026
+                      Governing Jurisdiction: Applicable Commercial Law &bull; Effective Upon Execution
                     </p>
-                    <div className="pt-2 text-xs leading-relaxed space-y-2 text-slate-800 dark:text-slate-200">
+                    <div className="pt-2 text-xs leading-relaxed space-y-2 text-slate-800 dark:text-slate-200 font-sans">
                       <p>
-                        <strong>1. DEFINITION OF CONFIDENTIAL INFORMATION:</strong> &quot;Confidential Information&quot; refers to all proprietary technical data, trade secrets, software algorithms, customer lists, and financial projections disclosed by either party...
+                        <strong>1. DEFINITION OF CONFIDENTIAL INFORMATION:</strong> Proprietary data, source code, business methods, customer data, and technical documentation disclosed between the parties...
                       </p>
                       <p>
-                        <strong>2. NON-DISCLOSURE AND STANDARD OF CARE:</strong> The Receiving Party agrees to maintain the Confidential Information in strict confidence, exercising at least the degree of care it employs for its own trade secrets, but no less than a reasonable standard...
+                        <strong>2. STANDARD OF CARE & OBLIGATIONS:</strong> The Receiving Party agrees to protect disclosed materials with the same degree of care it employs for its own trade secrets, but no less than reasonable standard...
                       </p>
                     </div>
                   </div>
@@ -114,10 +126,10 @@ export default function LandingPage() {
                         AI Clause Optimizer
                       </div>
                       <p className="text-[11px] text-slate-600 dark:text-slate-400">
-                        Proposed revision strengthens trade secret survival period to perpetuity.
+                        Clause analyzed. Clarity and mutual liability protections verified.
                       </p>
                       <div className="flex items-center gap-1.5 pt-1">
-                        <Badge variant="final" className="text-[10px]">Protection: High</Badge>
+                        <Badge variant="final" className="text-[10px]">Balanced Terms</Badge>
                         <Badge variant="outline" className="text-[10px]">Non-Destructive</Badge>
                       </div>
                     </div>
@@ -137,7 +149,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* HOW IT WORKS (Section 19) */}
+        {/* HOW IT WORKS */}
         <section id="how-it-works" className="py-20 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
@@ -148,7 +160,7 @@ export default function LandingPage() {
                 How LegalEase Works
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                From initial blank slate to fully reviewed, signed-ready legal document in under 3 minutes.
+                From initial agreement concept to publication-ready legal draft in minutes.
               </p>
             </div>
 
@@ -157,9 +169,9 @@ export default function LandingPage() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white font-extrabold text-lg mx-auto mb-5 shadow-md shadow-blue-500/20">
                   01
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">Choose a Document</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white">Choose a Template</h3>
                 <p className="mt-2.5 text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  Select from 17+ industry-standard templates: Employment, NDA, Leases, Freelance, or specify a Custom Agreement.
+                  Select from commercial templates: Employment, NDA, Leases, Freelance, or create a custom agreement.
                 </p>
               </div>
 
@@ -169,7 +181,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">Provide Your Details</h3>
                 <p className="mt-2.5 text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  Enter contracting parties, governing jurisdiction, payment terms, duration, and custom natural-language instructions.
+                  Enter contracting parties, governing jurisdiction, payment terms, duration, and custom requirements.
                 </p>
               </div>
 
@@ -179,20 +191,20 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">Generate, Edit & Export</h3>
                 <p className="mt-2.5 text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  AI formats the contract with recitals and signatures. Polish clauses with AI Assistant, track versions, and export to PDF, DOCX, or TXT.
+                  AI structures and drafts the contract. Polish clauses with AI Assistant, track versions, and export to PDF, DOCX, or TXT.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* TEMPLATES SHOWCASE (Section 15) */}
+        {/* TEMPLATES SHOWCASE */}
         <section id="templates" className="py-20 bg-slate-50/70 dark:bg-slate-900/30 border-b border-slate-200/80 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
               <div>
                 <h2 className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-                  Ready-to-Use Contracts
+                  Standard Contract Catalog
                 </h2>
                 <p className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                   Built-In Legal Templates
@@ -200,7 +212,7 @@ export default function LandingPage() {
               </div>
               <Link href="/dashboard/templates">
                 <Button variant="outline" size="sm" className="gap-1.5 text-xs">
-                  View All 17+ Templates
+                  View All Templates
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
@@ -231,7 +243,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* AI CAPABILITIES & FEATURES (Section 8, 10, 11) */}
+        {/* AI CAPABILITIES & FEATURES */}
         <section id="features" className="py-20 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
@@ -250,7 +262,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="font-bold text-base text-slate-900 dark:text-white">Structured Prompt Pipeline</h3>
                 <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  Strict system prompts ensure consistent terminology, defined parties, and complete prohibition of fabricated citations or invented case law.
+                  Consistent terminology, defined contracting parties, and strict prohibition of fabricated citations or invented case law.
                 </p>
               </div>
 
@@ -277,7 +289,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* DOCUMENT ANALYZER SHOWCASE (Section 12) */}
+        {/* DOCUMENT ANALYZER SHOWCASE */}
         <section id="analyzer" className="py-20 bg-slate-50/70 dark:bg-slate-900/30 border-b border-slate-200/80 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -289,8 +301,7 @@ export default function LandingPage() {
                   Audit Existing Contracts in Seconds
                 </h2>
                 <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                  Already have a contract from a counterparty? Upload existing PDF, Word DOCX, or TXT files.
-                  Our document extractor and legal audit engine instantly returns:
+                  Upload PDF, Word DOCX, or TXT contracts to automatically extract plain-language insights, identify liability risks, and receive key clause recommendations:
                 </p>
                 <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
                   <li className="flex items-center gap-2">
@@ -322,19 +333,19 @@ export default function LandingPage() {
 
               <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-xl dark:border-slate-800 dark:bg-slate-900 space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-                  <span className="font-bold text-xs uppercase tracking-wider text-slate-400">Analysis Snapshot</span>
-                  <Badge variant="final" className="text-[10px]">Audit Passed</Badge>
+                  <span className="font-bold text-xs uppercase tracking-wider text-slate-400">Analysis Features</span>
+                  <Badge variant="final" className="text-[10px]">Real-time Audit</Badge>
                 </div>
                 <div className="p-3 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900 rounded-lg text-xs space-y-1">
-                  <span className="font-bold text-amber-900 dark:text-amber-200">Liability Risk Detected</span>
+                  <span className="font-bold text-amber-900 dark:text-amber-200">Risk & Liability Detection</span>
                   <p className="text-amber-800 dark:text-amber-300 text-[11px]">
-                    Indemnification obligation is uncapped. Consider proposing a 12-month fee ceiling.
+                    Highlights uncapped liability, one-sided indemnity, or restrictive covenants.
                   </p>
                 </div>
                 <div className="p-3 bg-blue-50/60 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900 rounded-lg text-xs space-y-1">
-                  <span className="font-bold text-blue-900 dark:text-blue-200">Missing Information</span>
+                  <span className="font-bold text-blue-900 dark:text-blue-200">Missing Clause Identification</span>
                   <p className="text-blue-800 dark:text-blue-300 text-[11px]">
-                    No explicit notice period defined for termination without cause.
+                    Detects absence of standard notice periods, dispute resolution, or termination clauses.
                   </p>
                 </div>
               </div>
