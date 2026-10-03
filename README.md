@@ -286,11 +286,10 @@ Frontend=https://legal-ease-two-red.vercel.app/
 
 | Name | Role | Email |
 | :--- | :--- | :--- |
-| **Gayathri Devi S** | 👑 Team Lead | gayathridevi1326@gmail.com |
-| **Apsar J** | Team Member | apsarj586@gmail.com |
-| **Ayisha C** | Team Member | ayishachanbasha988@gmail.com |
-| **Abinaya M** | Team Member | abimuruganabi06@gmail.com |
-| **Divya S** | Team Member | divyasuguna2@gmail.com |
+| **MegalaE** | 👑 Team Lead | megalaelumalai022@gmail.com |
+| **Nithisha** | Team Member | nithisha200611@gmail.com |
+| **Pooja sri** | Team Member | psri45721@gmail.com |
+| **Preethi** | Team Member | Preethialex61@gmail.com |
 
 ---
 
